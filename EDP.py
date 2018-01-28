@@ -1,23 +1,35 @@
 import numpy
 
+print("Esse programa simula o aquecimento das faces de um cubo e como a temperatura irá se comportar ao longo deste corpo.")
+
 #Parametros da simulacao ***ESCOLHA DO USUARIO***
 dT = 0              #Valor da derivada da borda. Quando face esta isolada dT=0
 f_relax = 1.5       #Fator de relaxacao do metodo de liebmann
 tol_des = 0.01      #Tolerancia desejada para o erro
 faceCCderiv = 6    # 0-Nenhuma face/1-Face Superior/2-Face Inferior/3-Frontal/4-Traseira/5-Esquerda/6-Direita
 
-#Intervalos em X, Y e Z -- ***ESCOLHA DO USUARIO***
-LS_X = 4        #Limite Superior em X
-LI_X = 0        #Limite Inferior em X
-LS_Y = 4        #Limite Superior em Y
-LI_Y = 0        #Limite Inferior em Y
-LS_Z = 4        #Limite Superior em Z
-LI_Z = 0        #Limite Inferior em Z
+faceCCderiv = int(input("Escolha a face que deve ser isolada (0-Nenhuma face/1-Face Superior/2-Face Inferior/3-Frontal/4-Traseira/5-Esquerda/6-Direita): "))
+dT = float(input("Defina o valor da derivada da face isolada: "))
 
+LS = float(input("Escolha o limite superior para os 3 eixos: "))
+LI = float(input("Escolha o limite inferior para os 3 eixos: "))
+
+#Intervalos em X, Y e Z -- ***ESCOLHA DO USUARIO***
+LS_X = LS        #Limite Superior em X
+LI_X = LI        #Limite Inferior em X
+LS_Y = LS        #Limite Superior em Y
+LI_Y = LI        #Limite Inferior em Y
+LS_Z = LS        #Limite Superior em Z
+LI_Z = LI        #Limite Inferior em Z
+ 
 #Passo em X, Y e Z-- ***ESCOLHA DO USUARIO*** OS PASSOS DEVEM SER IGUAL PELO METODO DE LIEBMANN
 dx=1
 dy=1
 dz=1
+
+dx = float(input("Escolha o passo em relacao ao eixo 'x': "))
+dy = float(input("Escolha o passo em relacao ao eixo 'y': "))
+dz = float(input("Escolha o passo em relacao ao eixo 'z': "))
 
 #Declaracao das temperaturas nas faces ***ESCOLHA DO USUARIO***
 Tf = 1 #Face Frontal

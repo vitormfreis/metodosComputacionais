@@ -1,6 +1,6 @@
 import numpy
 
-print("Esse programa simula o aquecimento das faces de um cubo e como a temperatura irá se comportar ao longo deste corpo.")
+print("Esse programa simula o aquecimento das faces de um cubo e como a temperatura ira se comportar ao longo deste corpo.")
 
 #Parametros da simulacao ***ESCOLHA DO USUARIO***
 dT = 0              #Valor da derivada da borda. Quando face esta isolada dT=0
@@ -11,8 +11,8 @@ faceCCderiv = 6    # 0-Nenhuma face/1-Face Superior/2-Face Inferior/3-Frontal/4-
 faceCCderiv = int(input("Escolha a face que deve ser isolada (0-Nenhuma face/1-Face Superior/2-Face Inferior/3-Frontal/4-Traseira/5-Esquerda/6-Direita): "))
 dT = float(input("Defina o valor da derivada da face isolada: "))
 
-LS = float(input("Escolha o limite superior para os 3 eixos: "))
-LI = float(input("Escolha o limite inferior para os 3 eixos: "))
+LS = int(input("Escolha o limite superior para os 3 eixos: "))
+LI = int(input("Escolha o limite inferior para os 3 eixos: "))
 
 #Intervalos em X, Y e Z -- ***ESCOLHA DO USUARIO***
 LS_X = LS        #Limite Superior em X
@@ -27,9 +27,9 @@ dx=1
 dy=1
 dz=1
 
-dx = float(input("Escolha o passo em relacao ao eixo 'x': "))
-dy = float(input("Escolha o passo em relacao ao eixo 'y': "))
-dz = float(input("Escolha o passo em relacao ao eixo 'z': "))
+dx = int(input("Escolha o passo em relacao ao eixo 'x': "))
+dy = int(input("Escolha o passo em relacao ao eixo 'y': "))
+dz = int(input("Escolha o passo em relacao ao eixo 'z': "))
 
 #Declaracao das temperaturas nas faces ***ESCOLHA DO USUARIO***
 Tf = 1 #Face Frontal
@@ -38,6 +38,13 @@ Ts = 3 #Face Superior
 Ti = 4 #Face Inferior
 Te = 5 #Face Esquerda
 Td = 6 #Face Direita
+
+Tf = int(input("Escolha a temperatura para a Face Frontal: "))
+Tt = int(input("Escolha a temperatura para a Face Traseira: "))
+Ts = int(input("Escolha a temperatura para a Face Superior: "))
+Ti = int(input("Escolha a temperatura para a Face Inferior: "))
+Te = int(input("Escolha a temperatura para a Face Esquerda: "))
+Td = int(input("Escolha a temperatura para a Face Direita: "))
 
 # Definindo intervalos para o loop
 #Somando com o passo para a funcao range incluir o ultimo elemento
